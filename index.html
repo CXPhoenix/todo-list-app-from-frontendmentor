@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./src/assets/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP | Frontend Mentor Template | CXPhoenix</title>
+  </head>
+  <body class="bg-gray-100">
+    <div
+      id="todo-app"
+      class="mx-auto w-full max-w-md space-y-5 py-4 px-8 sm:pt-10"
+    >
+      <img
+        src="./src/assets/bg-mobile-light.jpg"
+        alt=""
+        class="fixed inset-x-0 top-0 -z-10 w-full sm:hidden"
+      />
+      <img
+        src="./src/assets/bg-desktop-light.jpg"
+        alt=""
+        class="fixed inset-x-0 -top-5 -z-10 hidden w-full sm:block"
+      />
+      <h1
+        id="title"
+        class="text-2xl font-bold tracking-[0.5rem] text-white sm:text-3xl"
+      >
+        TODO
+      </h1>
+
+      <div
+        id="list-content"
+        class="flex flex-col items-center justify-center gap-y-5"
+      >
+        <form id="create-item-form" class="w-full">
+          <label
+            for="item-creater"
+            class="flex items-center justify-center gap-x-3 rounded-md bg-white px-2 pl-5"
+          >
+            <div
+              id="circle"
+              class="flex items-center justify-center rounded-full border-[1px] border-gray-200 p-2"
+            >
+              <!-- <img src="./src/assets/icon-check.svg" alt="" class="" /> -->
+            </div>
+
+            <input
+              type="text"
+              name="item-creater"
+              id="item-creater"
+              class="h-full w-full py-4 text-[0.5rem] outline-none"
+              placeholder="Create a new todo..."
+              aria-label="Create a new todo..."
+            />
+          </label>
+        </form>
+        <div
+          id="items-list"
+          class="w-full rounded-md bg-white text-[0.5rem] shadow-sm sm:text-base"
+        >
+          <div id="items" class="w-full">
+            <div
+              class="flex w-full items-center justify-center rounded-t-md border-b-2 py-3 pr-3"
+            >
+              <label
+                for="completed-checked"
+                class="flex w-full items-center justify-center gap-x-3 bg-white px-2 pl-5"
+              >
+                <input
+                  type="checkbox"
+                  id="completed-checked"
+                  class="peer hidden"
+                />
+                <div
+                  id="circle"
+                  class="flex items-center justify-center rounded-full border-[1px] border-gray-200 p-1 peer-checked:bg-gradient-to-br peer-checked:from-sky-600 peer-checked:to-purple-400"
+                >
+                  <img src="./src/assets/icon-check.svg" alt="" class="" />
+                </div>
+                <p id="todo-list-item" class="w-full">測試</p>
+              </label>
+              <img src="./src/assets/icon-cross.svg" alt="" class="w-3" />
+            </div>
+          </div>
+          <div
+            id="items-static"
+            class="flex items-center justify-between p-4 text-[0.5rem] text-gray-400"
+          >
+            <p class="">
+              <span id="items-count" class="">0</span>
+              items left
+            </p>
+            <p class="">Clear Completed</p>
+          </div>
+        </div>
+        <div
+          id="show-controller"
+          class="flex w-full items-center justify-center gap-x-5 rounded-md bg-white py-3 text-sm text-gray-400"
+        >
+          <label for="all-state">
+            <input
+              type="radio"
+              name="state"
+              id="all-state"
+              class="peer hidden"
+              checked
+            />
+            <span class="peer-checked:text-sky-600">All</span>
+          </label>
+          <label for="active-state">
+            <input
+              type="radio"
+              name="state"
+              id="active-state"
+              class="peer hidden"
+            />
+            <span class="peer-checked:text-sky-600">Active</span>
+          </label>
+          <label for="completed-state">
+            <input
+              type="radio"
+              name="state"
+              id="completed-state"
+              class="peer hidden"
+            />
+            <span class="peer-checked:text-sky-600">Compelted</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <template>
+      <div
+        class="flex w-full items-center justify-center rounded-t-md border-b-2 py-3 pr-3"
+      >
+        <label
+          for="completed-checked"
+          class="flex w-full items-center justify-center gap-x-3 bg-white px-2 pl-5"
+        >
+          <input type="checkbox" id="completed-checked" class="peer hidden" />
+          <div
+            id="circle"
+            class="flex items-center justify-center rounded-full border-[1px] border-gray-200 p-1 peer-checked:bg-gradient-to-br peer-checked:from-sky-600 peer-checked:to-purple-400"
+          >
+            <img src="./src/assets/icon-check.svg" alt="" class="" />
+          </div>
+          <p id="todo-list-item" class="w-full">測試</p>
+        </label>
+        <img src="./src/assets/icon-cross.svg" alt="" class="w-3" />
+      </div>
+    </template>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
