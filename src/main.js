@@ -32,6 +32,7 @@ $(document).ready(function () {
       renderItems();
     }
   });
+
   renderItems();
 });
 
@@ -49,9 +50,16 @@ function updateItemLeftCount() {
 
 function renderItems(datas = todoDatas) {
   $("#items").empty();
+  const state = $('input[type="radio"]:checked').attr("id");
+  if (state === "active-state") {
+    datas = datas.filter((data) => !data.completed_state);
+  } else if (state === "completed-state") {
+    datas = datas.filter((data) => data.completed_state);
+  }
   datas.forEach((data) =>
     renderItem(data.content_id, data.content, data.completed_state)
   );
+
   updateItemLeftCount();
 }
 
