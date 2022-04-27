@@ -51,6 +51,7 @@
               class="h-full w-full py-4 text-[0.5rem] outline-none"
               placeholder="Create a new todo..."
               aria-label="Create a new todo..."
+              autocomplete="off"
             />
           </label>
         </form>
@@ -60,11 +61,11 @@
         >
           <div id="items" class="w-full">
             <div
-              class="flex w-full items-center justify-center rounded-t-md border-b-2 py-3 pr-3"
+              class="flex w-full items-center justify-center gap-1 rounded-t-md border-b-[1px]"
             >
               <label
                 for="completed-checked"
-                class="flex w-full items-center justify-center gap-x-3 bg-white px-2 pl-5"
+                class="flex w-full cursor-pointer items-center justify-center gap-x-3 px-2 py-3 pl-5"
               >
                 <input
                   type="checkbox"
@@ -77,9 +78,18 @@
                 >
                   <img src="./src/assets/icon-check.svg" alt="" class="" />
                 </div>
-                <p id="todo-list-item" class="w-full">測試</p>
+                <p
+                  id="todo-list-item-content"
+                  class="w-full peer-checked:text-gray-300 peer-checked:line-through"
+                >
+                  測試
+                </p>
               </label>
-              <img src="./src/assets/icon-cross.svg" alt="" class="w-3" />
+              <img
+                src="./src/assets/icon-cross.svg"
+                alt=""
+                class="w-8 cursor-pointer pr-5"
+              />
             </div>
           </div>
           <div
@@ -90,14 +100,14 @@
               <span id="items-count" class="">0</span>
               items left
             </p>
-            <p class="">Clear Completed</p>
+            <p class="cursor-pointer" id="clear-completed">Clear Completed</p>
           </div>
         </div>
         <div
           id="show-controller"
           class="flex w-full items-center justify-center gap-x-5 rounded-md bg-white py-3 text-sm text-gray-400"
         >
-          <label for="all-state">
+          <label class="cursor-pointer" for="all-state">
             <input
               type="radio"
               name="state"
@@ -107,7 +117,7 @@
             />
             <span class="peer-checked:text-sky-600">All</span>
           </label>
-          <label for="active-state">
+          <label class="cursor-pointer" for="active-state">
             <input
               type="radio"
               name="state"
@@ -116,7 +126,7 @@
             />
             <span class="peer-checked:text-sky-600">Active</span>
           </label>
-          <label for="completed-state">
+          <label class="cursor-pointer" for="completed-state">
             <input
               type="radio"
               name="state"
@@ -128,13 +138,13 @@
         </div>
       </div>
     </div>
-    <template>
+    <template id="todo-list-item">
       <div
-        class="flex w-full items-center justify-center rounded-t-md border-b-2 py-3 pr-3"
+        class="flex w-full items-center justify-center gap-1 rounded-t-md border-b-2"
       >
         <label
           for="completed-checked"
-          class="flex w-full items-center justify-center gap-x-3 bg-white px-2 pl-5"
+          class="flex w-full cursor-pointer items-center justify-center gap-x-3 px-2 py-3 pl-5"
         >
           <input type="checkbox" id="completed-checked" class="peer hidden" />
           <div
@@ -143,9 +153,16 @@
           >
             <img src="./src/assets/icon-check.svg" alt="" class="" />
           </div>
-          <p id="todo-list-item" class="w-full">測試</p>
+          <p
+            id="todo-list-item-content"
+            class="w-full text-[0.5rem] peer-checked:text-gray-300 peer-checked:line-through"
+          >
+            測試1
+          </p>
         </label>
-        <img src="./src/assets/icon-cross.svg" alt="" class="w-3" />
+        <button id="delete-btn" class="cursor-pointer pr-5">
+          <img src="./src/assets/icon-cross.svg" alt="delete image" />
+        </button>
       </div>
     </template>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
